@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Rows>
+  <CreateBugData>
+    <Severity>blocker</Severity>
+    <HardWare>Other</HardWare>
+    <OS>Linux</OS>
+	<Summary>Summay One - XML</Summary>
+	<Desc>Description One - XML</Desc>
+  </CreateBugData>
+  <CreateBugData>
+    <Severity>major</Severity>
+    <HardWare>Macintosh</HardWare>
+    <OS>Other</OS>
+	<Summary>Summay Two - XML</Summary>
+	<Desc>Description Two - XML</Desc>
+  </CreateBugData>
+  <CreateBugData>
+    <Severity>normal</Severity>
+    <HardWare>All</HardWare>
+    <OS>All</OS>
+	<Summary>Summay Three - XML</Summary>
+	<Desc>Description Three - XML</Desc>
+  </CreateBugData>
+</Rows>
