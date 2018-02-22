@@ -53,6 +53,9 @@
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Protractor, Version=0.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Protractor.0.11.0\lib\net40\Protractor.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
@@ -154,10 +157,12 @@
     <Compile Include="TestScript\Log4Net\TestLogger.cs" />
     <Compile Include="TestScript\MouseAction\TestMouseAction.cs" />
     <Compile Include="TestScript\MultipleBrowser\TestMultipleBrowserWindow.cs" />
+    <Compile Include="TestScript\NgWebDriverTest\TestAngularApp.cs" />
     <Compile Include="TestScript\PageNavigation\TestPageNavigation.cs" />
     <Compile Include="TestScript\PageObject\TestPageObject.cs" />
     <Compile Include="TestScript\PhantomJS\TestPhantomJS.cs" />
     <Compile Include="TestScript\Popups\TestPopups.cs" />
+    <Compile Include="TestScript\Question\SubString.cs" />
     <Compile Include="TestScript\RadAutoCompleteBox\TC-AutoSuggestComboBox.cs" />
     <Compile Include="TestScript\RadioButton\HandleRadioButton.cs" />
     <Compile Include="TestScript\ScreenShot\TakeScreenShots.cs" />
