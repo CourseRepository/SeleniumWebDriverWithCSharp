@@ -32,6 +32,19 @@ namespace SeleniumWebdriver.BaseClasses
             Logger.Info(" Using Firefox Profile ");
             return profile;
         }
+
+        private static FirefoxOptions GetOptions()
+        {
+            FirefoxProfileManager manager = new FirefoxProfileManager();
+
+            FirefoxOptions options = new FirefoxOptions()
+            {
+                Profile = manager.GetProfile("default"),
+                AcceptInsecureCertificates = true,
+
+            };
+            return options;
+        }
         private static ChromeOptions GetChromeOptions()
         {
             ChromeOptions option = new ChromeOptions();
