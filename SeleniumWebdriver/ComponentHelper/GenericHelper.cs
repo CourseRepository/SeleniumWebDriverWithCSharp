@@ -139,6 +139,18 @@ namespace SeleniumWebdriver.ComponentHelper
             return flag;
         }
 
+        public static IWebElement Wait(Func<IWebDriver,IWebElement> conditions,TimeSpan timeout)
+        {
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = (TimeSpan.FromSeconds(1));
+            Logger.Info(" Setting the Explicit wait to 1 sec ");
+            var wait = GetWebdriverWait(timeout);
+            var flag = wait.Until(conditions);
+            Logger.Info(" Setting the Explicit wait Configured value ");
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = (TimeSpan.FromSeconds(ObjectRepository.Config.GetElementLoadTimeOut()));
+            return flag;
+            ExpectedConditions
+        }
+
         
 
     }

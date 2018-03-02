@@ -8,6 +8,7 @@ using OpenQA.Selenium;
 using SeleniumWebdriver.ComponentHelper;
 using SeleniumWebdriver.Settings;
 using log4net;
+using OpenQA.Selenium.Support.UI;
 
 namespace SeleniumWebdriver.TestScript.Popups
 {
@@ -34,6 +35,7 @@ namespace SeleniumWebdriver.TestScript.Popups
             //TextBoxHelper.ClearTextBox(By.Id("textareaCode"));
             //TextBoxHelper.TypeInTextBox(By.Id("textareaCode"),text);
             Logger.Info("Test Alert Complete");
+            GenericHelper.Wait(ExpectedConditions.ElementIsVisible(By.Id("id")), TimeSpan.FromSeconds(60));
 
         }
 
