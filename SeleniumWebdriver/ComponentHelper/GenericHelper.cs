@@ -148,7 +148,6 @@ namespace SeleniumWebdriver.ComponentHelper
             Logger.Info(" Setting the Explicit wait Configured value ");
             ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = (TimeSpan.FromSeconds(ObjectRepository.Config.GetElementLoadTimeOut()));
             return flag;
-            ExpectedConditions
         }
 
         

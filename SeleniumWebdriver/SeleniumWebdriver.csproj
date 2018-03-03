@@ -198,6 +198,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>TestFeature2.feature.cs</LastGenOutput>
     </None>
+    <None Include="OrderedTest.orderedtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>

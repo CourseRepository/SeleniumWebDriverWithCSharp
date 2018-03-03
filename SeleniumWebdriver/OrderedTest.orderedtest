@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="OrderedTest" storage="d:\github\seleniumwebdriverwithcsharp\seleniumwebdriver\orderedtest.orderedtest" id="492a3583-8045-4821-90d3-c81013348d48" continueAfterFailure="true" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestLinks>
+    <TestLink id="49c41486-d6de-871c-09c7-3111eef46ba0" name="DranNDrop" storage="bin\debug\seleniumwebdriver.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="c3951906-a15c-c040-d10e-e73cd824e1ba" name="TestAlert" storage="bin\debug\seleniumwebdriver.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="98be8105-004b-282b-f712-81b95b68011d" name="TestAutoSug" storage="bin\debug\seleniumwebdriver.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>
