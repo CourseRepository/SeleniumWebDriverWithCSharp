@@ -150,6 +150,7 @@
     <Compile Include="TestScript\DefaultWait\HandleDefaultWait.cs" />
     <Compile Include="TestScript\FileUpload\TestFileUploadAction.cs" />
     <Compile Include="TestScript\FindElements\HandleElements.cs" />
+    <Compile Include="TestScript\Form\TestSubmitForm.cs" />
     <Compile Include="TestScript\HandleDropDown\DropDownList.cs" />
     <Compile Include="TestScript\HyperLink\TestHyperLink.cs" />
     <Compile Include="TestScript\JavaScript\TestJavaScriptClass.cs" />
