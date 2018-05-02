@@ -16,8 +16,8 @@ namespace SeleniumWebdriver.PageObject
         private IWebDriver driver;
         #region WenElement
 
-        [FindsBy(How = How.LinkText, Using = "Testng")]
-        private IWebElement Testng;
+        //[FindsBy(How = How.LinkText, Using = "Testng")]
+        private IWebElement Testng => driver.FindElement(By.LinkText("Testng"));
 
         #endregion
 

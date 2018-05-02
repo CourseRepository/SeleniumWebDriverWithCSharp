@@ -17,15 +17,15 @@ namespace SeleniumWebdriver.PageObject
         private IWebDriver driver;
         #region WebElement
 
-        [FindsBy(How = How.Id, Using = "quicksearch_main")]
-        private IWebElement QuickSearchTextBox;
+        //[FindsBy(How = How.Id, Using = "quicksearch_main")]
+        private IWebElement QuickSearchTextBox => driver.FindElement(By.Id("quicksearch_main"));
 
-        [FindsBy(How = How.Id, Using = "find")]
-        [CacheLookup]
-        private IWebElement QuickSearchBtn;
+        //[FindsBy(How = How.Id, Using = "find")]
+        //[CacheLookup]
+        private IWebElement QuickSearchBtn => driver.FindElement(By.Id("find"));
 
-        [FindsBy(How = How.LinkText, Using = "File a Bug")]
-        private IWebElement FileABugLink;
+        //[FindsBy(How = How.LinkText, Using = "File a Bug")]
+        private IWebElement FileABugLink => driver.FindElement(By.LinkText("File a Bug"));
 
         #endregion
 

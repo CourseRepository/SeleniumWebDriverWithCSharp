@@ -9,6 +9,7 @@ using SeleniumWebdriver.ComponentHelper;
 using SeleniumWebdriver.Settings;
 using log4net;
 using OpenQA.Selenium.Support.UI;
+using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
 namespace SeleniumWebdriver.TestScript.Popups
 {

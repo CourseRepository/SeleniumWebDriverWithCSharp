@@ -17,23 +17,23 @@ namespace SeleniumWebdriver.PageObject
         
         #region WebElement
 
-        [FindsBy(How = How.Id, Using = "bug_severity")]
-        private IWebElement SeverityDropDown;
+        //[FindsBy(How = How.Id, Using = "bug_severity")]
+        private IWebElement SeverityDropDown => driver.FindElement(By.Id("bug_severity"));
 
-        [FindsBy(How = How.Id,Using = "rep_platform")]
-        private IWebElement Hardware;
+       // [FindsBy(How = How.Id,Using = "rep_platform")]
+        private IWebElement Hardware => driver.FindElement(By.Id("rep_platform"));
 
-        [FindsBy(How = How.Id, Using = "op_sys")]
-        private IWebElement OpSys;
+        //[FindsBy(How = How.Id, Using = "op_sys")]
+        private IWebElement OpSys => driver.FindElement(By.Id("op_sys"));
 
-        [FindsBy(How = How.Id, Using = "short_desc")]
-        private IWebElement ShortDesc;
+        //[FindsBy(How = How.Id, Using = "short_desc")]
+        private IWebElement ShortDesc => driver.FindElement(By.Id("short_desc"));
 
-        [FindsBy(How = How.Id, Using = "comment")]
-        private IWebElement Comment;
+       // [FindsBy(How = How.Id, Using = "comment")]
+        private IWebElement Comment => driver.FindElement(By.Id("comment"));
 
-        [FindsBy(How = How.Id, Using = "commit")]
-        private IWebElement Commit;
+        //[FindsBy(How = How.Id, Using = "commit")]
+        private IWebElement Commit => driver.FindElement(By.Id("commit"));
         #endregion
 
         public BugDetail(IWebDriver _driver) : base(_driver)

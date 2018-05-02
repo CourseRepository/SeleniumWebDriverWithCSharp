@@ -16,8 +16,9 @@ namespace SeleniumWebdriver.ComponentHelper
         public static object ExecuteScript(string script)
         {
             IJavaScriptExecutor executor = ((IJavaScriptExecutor) ObjectRepository.Driver);
-            return executor.ExecuteScript(script);
             Logger.Info($" Execute Script @ {script}");
+            return executor.ExecuteScript(script);
+            
         }
 
         public static object ExecuteScript(string script,params object[] args)

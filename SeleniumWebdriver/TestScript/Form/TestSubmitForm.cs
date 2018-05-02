@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
 namespace SeleniumWebdriver.TestScript.Form
 {
@@ -50,7 +51,7 @@ namespace SeleniumWebdriver.TestScript.Form
                 catch(AssertFailedException)
                 {
                     //Can be replace by logger
-                    Console.Write(String.Format("Data mismatch for locator {0} and value {1}"), locator, expectedDataSet[locator]);
+                    Console.Write(String.Format($"Data mismatch for locator {0} and value {1}"), locator, expectedDataSet[locator]);
                 }
                 
             }

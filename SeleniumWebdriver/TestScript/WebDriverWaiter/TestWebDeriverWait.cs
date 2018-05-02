@@ -8,6 +8,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumWebdriver.ComponentHelper;
 using SeleniumWebdriver.Settings;
+using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
 namespace SeleniumWebdriver.TestScript.WebDriverWaiter
 {
