@@ -24,7 +24,36 @@ namespace SeleniumWebdriver.TestScript.Form
             TextBoxHelper.TypeInTextBox(By.CssSelector("[name='firstname']"), "Testing");
             Thread.Sleep(2000);
             Assert.AreEqual("MickeyTesting", GenericHelper.GetElement(By.CssSelector("[name='firstname']")).GetAttribute("value"));
+            AssertData(By.CssSelector("[name='firstname']"), "MickeyTesting");
 
+            Dictionary<By, string> data = new Dictionary<By, string>();
+            data.Add(By.CssSelector("[name='firstname']"), "MickeyTesting");
+            data.Add(By.CssSelector("[name='firstname']"), "MickeyTesting");
+            data.Add(By.CssSelector("[name='firstname']"), "MickeyTesting");
+
+            AssertData(data);
+        }
+
+        private void AssertData(By locator,string expectedvalue)
+        {
+            Assert.AreEqual(expectedvalue, GenericHelper.GetElement(locator).GetAttribute("value"));
+        }
+
+        private void AssertData(Dictionary<By,string> expectedDataSet)
+        {
+            foreach(By locator in expectedDataSet.Keys)
+            {
+                try
+                {
+                    Assert.AreEqual(expectedDataSet[locator], GenericHelper.GetElement(locator).GetAttribute("value"));
+                }
+                catch(AssertFailedException)
+                {
+                    //Can be replace by logger
+                    Console.Write(String.Format("Data mismatch for locator {0} and value {1}"), locator, expectedDataSet[locator]);
+                }
+                
+            }
         }
 
         private WebDriverWait GetWait()
