@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 using SeleniumWebdriver.BaseClasses;
 using SeleniumWebdriver.ComponentHelper;
 using SeleniumWebdriver.Settings;
@@ -14,26 +14,32 @@ namespace SeleniumWebdriver.PageObject
     public class BugDetail : PageBase
     {
         private IWebDriver driver;
-        
+
         #region WebElement
 
-        //[FindsBy(How = How.Id, Using = "bug_severity")]
-        private IWebElement SeverityDropDown => driver.FindElement(By.Id("bug_severity"));
+        [FindsBy(How = How.Id, Using = "bug_severity")]
+        private IWebElement SeverityDropDown;
+        //private IWebElement SeverityDropDown => driver.FindElement(By.Id("bug_severity"));
 
-       // [FindsBy(How = How.Id,Using = "rep_platform")]
-        private IWebElement Hardware => driver.FindElement(By.Id("rep_platform"));
+        [FindsBy(How = How.Id,Using = "rep_platform")]
+        private IWebElement Hardware;
+        //private IWebElement Hardware => driver.FindElement(By.Id("rep_platform"));
 
-        //[FindsBy(How = How.Id, Using = "op_sys")]
-        private IWebElement OpSys => driver.FindElement(By.Id("op_sys"));
+        [FindsBy(How = How.Id, Using = "op_sys")]
+        private IWebElement OpSys;
+        //private IWebElement OpSys => driver.FindElement(By.Id("op_sys"));
 
-        //[FindsBy(How = How.Id, Using = "short_desc")]
-        private IWebElement ShortDesc => driver.FindElement(By.Id("short_desc"));
+        [FindsBy(How = How.Id, Using = "short_desc")]
+        private IWebElement ShortDesc;
+        //private IWebElement ShortDesc => driver.FindElement(By.Id("short_desc"));
 
-       // [FindsBy(How = How.Id, Using = "comment")]
-        private IWebElement Comment => driver.FindElement(By.Id("comment"));
+        [FindsBy(How = How.Id, Using = "comment")]
+        private IWebElement Comment;
+        //private IWebElement Comment => driver.FindElement(By.Id("comment"));
 
-        //[FindsBy(How = How.Id, Using = "commit")]
-        private IWebElement Commit => driver.FindElement(By.Id("commit"));
+        [FindsBy(How = How.Id, Using = "commit")]
+        private IWebElement Commit;
+        //private IWebElement Commit => driver.FindElement(By.Id("commit"));
         #endregion
 
         public BugDetail(IWebDriver _driver) : base(_driver)

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 using SeleniumWebdriver.BaseClasses;
 using SeleniumWebdriver.ComponentHelper;
 using SeleniumWebdriver.Settings;
@@ -16,8 +16,9 @@ namespace SeleniumWebdriver.PageObject
         private IWebDriver driver;
         #region WenElement
 
-        //[FindsBy(How = How.LinkText, Using = "Testng")]
-        private IWebElement Testng => driver.FindElement(By.LinkText("Testng"));
+        [FindsBy(How = How.LinkText, Using = "Testng")]
+        private IWebElement Testng;
+        //private IWebElement Testng => driver.FindElement(By.LinkText("Testng"));
 
         #endregion
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 using SeleniumWebdriver.BaseClasses;
 using SeleniumWebdriver.ComponentHelper;
 using SeleniumWebdriver.Settings;
@@ -17,19 +17,22 @@ namespace SeleniumWebdriver.PageObject
 
 
         #region WebElement
-        //[FindsBy(How = How.Id, Using = "Bugzilla_login")]
-        private IWebElement LoginTextBox => driver.FindElement(By.Id("Bugzilla_login"));
+        [FindsBy(How = How.Id, Using = "Bugzilla_login")]
+        private IWebElement LoginTextBox;
+        //private IWebElement LoginTextBox => driver.FindElement(By.Id("Bugzilla_login"));
 
-        //[FindsBy(How = How.Id, Using = "Bugzilla_password")]
-        private IWebElement PassTextBox => driver.FindElement(By.Id("Bugzilla_password"));
+        [FindsBy(How = How.Id, Using = "Bugzilla_password")]
+        private IWebElement PassTextBox;
+        //private IWebElement PassTextBox => driver.FindElement(By.Id("Bugzilla_password"));
 
-        //[FindsBy(How = How.Id, Using = "log_in")]
-        //[CacheLookup]
-        private IWebElement LoginButton => driver.FindElement(By.Id ("log_in"));
+        [FindsBy(How = How.Id, Using = "log_in")]
+        [CacheLookup]
+        private IWebElement LoginButton;
+        //private IWebElement LoginButton => driver.FindElement(By.Id ("log_in"));
 
-       // [FindsBy(How = How.LinkText, Using = "Home")]
-
-        private IWebElement HomeLink => driver.FindElement(By.LinkText("Home"));
+        [FindsBy(How = How.LinkText, Using = "Home")]
+        private IWebElement HomeLink;
+        //private IWebElement HomeLink => driver.FindElement(By.LinkText("Home"));
 
 
         #endregion

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 using SeleniumWebdriver.BaseClasses;
 using SeleniumWebdriver.ComponentHelper;
 using SeleniumWebdriver.Settings;
@@ -17,15 +17,18 @@ namespace SeleniumWebdriver.PageObject
         private IWebDriver driver;
         #region WebElement
 
-        //[FindsBy(How = How.Id, Using = "quicksearch_main")]
-        private IWebElement QuickSearchTextBox => driver.FindElement(By.Id("quicksearch_main"));
+        [FindsBy(How = How.Id, Using = "quicksearch_main")]
+        private IWebElement QuickSearchTextBox;
+        //private IWebElement QuickSearchTextBox => driver.FindElement(By.Id("quicksearch_main"));
 
-        //[FindsBy(How = How.Id, Using = "find")]
-        //[CacheLookup]
-        private IWebElement QuickSearchBtn => driver.FindElement(By.Id("find"));
+        [FindsBy(How = How.Id, Using = "find")]
+        [CacheLookup]
+        private IWebElement QuickSearchBtn;
+        //private IWebElement QuickSearchBtn => driver.FindElement(By.Id("find"));
 
-        //[FindsBy(How = How.LinkText, Using = "File a Bug")]
-        private IWebElement FileABugLink => driver.FindElement(By.LinkText("File a Bug"));
+        [FindsBy(How = How.LinkText, Using = "File a Bug")]
+        private IWebElement FileABugLink;
+        //private IWebElement FileABugLink => driver.FindElement(By.LinkText("File a Bug"));
 
         #endregion
 
