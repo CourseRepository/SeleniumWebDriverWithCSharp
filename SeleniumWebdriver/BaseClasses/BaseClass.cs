@@ -21,7 +21,7 @@ namespace SeleniumWebdriver.BaseClasses
 {
     [TestClass]
     
-    public class BaseClass
+    public class BaseClass 
     {
         private static readonly ILog Logger = Log4NetHelper.GetXmlLogger(typeof (BaseClass));
         private static FirefoxProfile GetFirefoxptions()

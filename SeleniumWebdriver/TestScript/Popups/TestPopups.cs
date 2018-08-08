@@ -24,6 +24,9 @@ namespace SeleniumWebdriver.TestScript.Popups
             NavigationHelper.NavigateToUrl("http://www.w3schools.com/js/js_popup.asp");
             ButtonHelper.ClickButton(By.XPath("//div[@id='main']/descendant::a[position()=3]"));
             BrowserHelper.SwitchToWindow(1);
+            IWebElement textarea = ObjectRepository.Driver.FindElement(By.Id("textareaCode"));
+            JavaScriptExecutor.ExecuteScript("document.getElementById('textareaCode').setAttribute('style','display: inline;')");
+            TextBoxHelper.ClearTextBox(By.CssSelector("#textareawrapper"));
             BrowserHelper.SwitchToFrame(By.Id("iframeResult"));
            // ButtonHelper.ClickButton(By.XPath("//button[text()='Try it']"));
             var text = JavaScriptPopHelper.GetPopUpText();
