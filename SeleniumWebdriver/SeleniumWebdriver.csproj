@@ -173,6 +173,8 @@
     <Compile Include="TestScript\Popups\TestPopups.cs" />
     <Compile Include="TestScript\Question\SubString.cs" />
     <Compile Include="TestScript\Question\TestFileDownload.cs" />
+    <Compile Include="TestScript\Question\TestGetDataFromPage.cs" />
+    <Compile Include="TestScript\Question\TestReadExcelFile.cs" />
     <Compile Include="TestScript\RadAutoCompleteBox\TC-AutoSuggestComboBox.cs" />
     <Compile Include="TestScript\RadioButton\HandleRadioButton.cs" />
     <Compile Include="TestScript\ScreenShot\TakeScreenShots.cs" />
