@@ -194,6 +194,8 @@
     <None Include="DataDriven\TestDataFiles\ExcelData.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="ExcelReader\DataFiles\KeywordOne.xlsx" />
+    <None Include="ExcelReader\DataFiles\KeywordTwo.xlsx" />
     <None Include="FeatureFiles\Arguments.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Arguments.feature.cs</LastGenOutput>
