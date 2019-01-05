@@ -14,6 +14,7 @@ using OpenQA.Selenium.Remote;
 using SeleniumWebdriver.ComponentHelper;
 using SeleniumWebdriver.Configuration;
 using SeleniumWebdriver.CustomException;
+using SeleniumWebdriver.Reports;
 using SeleniumWebdriver.Settings;
 using TechTalk.SpecFlow;
 
@@ -116,7 +117,8 @@ namespace SeleniumWebdriver.BaseClasses
         public static void InitWebdriver(TestContext tc)
         {
             ObjectRepository.Config = new AppConfigReader();
-
+            Reporter.GetReportManager();
+            Reporter.AddTestCaseMetadataToHtmlReport(tc);
             switch (ObjectRepository.Config.GetBrowser())
             {
                 case BrowserType.Firefox:
