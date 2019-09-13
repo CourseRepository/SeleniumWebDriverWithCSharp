@@ -84,6 +84,9 @@
     <Reference Include="SeleniumExtras.WaitHelpers, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetSeleniumExtras.WaitHelpers.3.11.0\lib\net45\SeleniumExtras.WaitHelpers.dll</HintPath>
     </Reference>
+    <Reference Include="SikuliSharp, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SikuliSharp.1.5.0\lib\net451\SikuliSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
@@ -102,8 +105,8 @@
       <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.XML" />
-    <Reference Include="TechTalk.SpecFlow, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
-      <HintPath>..\packages\SpecFlow.2.0.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
+    <Reference Include="TechTalk.SpecFlow, Version=2.4.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.2.4.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
     </Reference>
     <Reference Include="WebDriver, Version=3.11.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.WebDriver.3.11.2\lib\net45\WebDriver.dll</HintPath>
@@ -137,6 +140,7 @@
     <Compile Include="ComponentHelper\CustomWebElement.cs" />
     <Compile Include="ComponentHelper\FileHelper.cs" />
     <Compile Include="ComponentHelper\GenericHelper.cs" />
+    <Compile Include="ComponentHelper\GridHelper.cs" />
     <Compile Include="ComponentHelper\JavaScriptExecutor.cs" />
     <Compile Include="ComponentHelper\JavaScriptPopHelper.cs" />
     <Compile Include="ComponentHelper\LinkHelper.cs" />
@@ -192,9 +196,16 @@
     <Compile Include="TestScript\Button\HandleButton.cs" />
     <Compile Include="TestScript\CheckBox\TestCheckBox.cs" />
     <Compile Include="TestScript\DefaultWait\HandleDefaultWait.cs" />
+    <Compile Include="TestScript\EmptyDataTable\EmptyDataTable.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmptyDataTable.feature</DependentUpon>
+    </Compile>
+    <Compile Include="TestScript\EmptyDataTable\EmptyDataTableStepDfn.cs" />
     <Compile Include="TestScript\FileUpload\TestFileUploadAction.cs" />
     <Compile Include="TestScript\FindElements\HandleElements.cs" />
     <Compile Include="TestScript\Form\TestSubmitForm.cs" />
+    <Compile Include="TestScript\Grid\TestWebTable.cs" />
     <Compile Include="TestScript\HandleDropDown\DropDownList.cs" />
     <Compile Include="TestScript\HyperLink\TestHyperLink.cs" />
     <Compile Include="TestScript\JavaScript\TestJavaScriptClass.cs" />
@@ -208,6 +219,9 @@
     <Compile Include="TestScript\PageObject\TestPageObject.cs" />
     <Compile Include="TestScript\PhantomJS\TestPhantomJS.cs" />
     <Compile Include="TestScript\Popups\TestPopups.cs" />
+    <Compile Include="TestScript\Question\Frameset\TestFrameSet.cs" />
+    <Compile Include="TestScript\Question\GetExecutionPath\TestGetExecutionPath.cs" />
+    <Compile Include="TestScript\Question\MinMax.cs" />
     <Compile Include="TestScript\Question\SubString.cs" />
     <Compile Include="TestScript\Question\TestFileDownload.cs" />
     <Compile Include="TestScript\Question\TestGetDataFromPage.cs" />
@@ -216,6 +230,7 @@
     <Compile Include="TestScript\RadAutoCompleteBox\TC-AutoSuggestComboBox.cs" />
     <Compile Include="TestScript\RadioButton\HandleRadioButton.cs" />
     <Compile Include="TestScript\ScreenShot\TakeScreenShots.cs" />
+    <Compile Include="TestScript\SikuliScript\TestSikuliScript.cs" />
     <Compile Include="TestScript\StringToByClass\TestPage.cs" />
     <Compile Include="TestScript\TestClassContext\TestClassContext.cs" />
     <Compile Include="TestScript\TextBox\TestTextBox.cs" />
@@ -224,6 +239,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\SampleFile.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
@@ -267,6 +285,10 @@
     </None>
     <None Include="Resources\ExcelData.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestScript\EmptyDataTable\EmptyDataTable.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EmptyDataTable.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -319,10 +341,12 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Selenium.WebDriver.IEDriver.3.11.1\build\Selenium.WebDriver.IEDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.IEDriver.3.11.1\build\Selenium.WebDriver.IEDriver.targets'))" />
-    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.43.0\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.2.43.0\build\Selenium.WebDriver.ChromeDriver.targets'))" />
+    <Error Condition="!Exists('..\packages\SpecFlow.2.4.0\build\SpecFlow.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SpecFlow.2.4.0\build\SpecFlow.targets'))" />
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.74.0.3729.6\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.74.0.3729.6\build\Selenium.WebDriver.ChromeDriver.targets'))" />
   </Target>
   <Import Project="..\packages\Selenium.WebDriver.IEDriver.3.11.1\build\Selenium.WebDriver.IEDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.IEDriver.3.11.1\build\Selenium.WebDriver.IEDriver.targets')" />
-  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.2.43.0\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.43.0\build\Selenium.WebDriver.ChromeDriver.targets')" />
+  <Import Project="..\packages\SpecFlow.2.4.0\build\SpecFlow.targets" Condition="Exists('..\packages\SpecFlow.2.4.0\build\SpecFlow.targets')" />
+  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.74.0.3729.6\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.74.0.3729.6\build\Selenium.WebDriver.ChromeDriver.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
