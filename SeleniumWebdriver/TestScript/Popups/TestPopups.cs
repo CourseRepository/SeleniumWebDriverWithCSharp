@@ -18,6 +18,9 @@ namespace SeleniumWebdriver.TestScript.Popups
     public class TestPopups
     {
         private static readonly ILog Logger = Log4NetHelper.GetXmlLogger(typeof(TestPopups));
+        public TestContext TestContext { get; set; }
+
+
         [TestMethod]
         public void TestAlert()
         {
@@ -93,6 +96,12 @@ namespace SeleniumWebdriver.TestScript.Popups
             //prompt.SendKeys("This is automation");
             //prompt.Dismiss();
             Logger.Info("Test Prompt Complete");
+        }
+
+        [TestCleanup]
+        public void TearDown()
+        {
+            Logger.Info($"Test Method Name - {TestContext.TestName}, Status - {TestContext.CurrentTestOutcome}");
         }
 
     }
