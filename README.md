@@ -9,4 +9,8 @@ https://www.udemy.com/course/bdd-with-selenium-webdriver-and-speckflow-using-c/?
 
 ## YouTube Playlist
 
-https://www.youtube.com/playlist?list=PLlsKgYi2Lw724ozNSmdSrrtU8q6a1m3ob
+* Selenium Webdriver with C# https://www.youtube.com/playlist?list=PLlsKgYi2Lw724ozNSmdSrrtU8q6a1m3ob
+
+* Rest API Testing using RestSharp in C# https://www.youtube.com/playlist?list=PLlsKgYi2Lw73ox9LF5VfYMrA1eo9e7rIq
+
+* API Testing Using C# Http Client https://www.youtube.com/playlist?list=PLlsKgYi2Lw722PMqESdivKJQgRtJAdbzn
